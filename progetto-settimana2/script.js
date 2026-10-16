@@ -15,104 +15,104 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
- const prodotti = [
-  {
-    nome: "Cuffie wireless con cancellazione del rumore",
-    categoria: "Elettronica",
-    prezzo: 89.99,
-    rating: 4,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Cuffie",
-    disponibile: true
-  },
+const prodotti = [
+   {
+      nome: "Cuffie wireless con cancellazione del rumore",
+      categoria: "Elettronica",
+      prezzo: 89.99,
+      rating: 4,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Cuffie",
+      disponibile: true
+   },
 
-  {
-    nome: "Tablet 10 pollici 64GB",
-    categoria: "Elettronica",
-    prezzo: 199.00,
-    rating: 5,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Tablet",
-    disponibile: true
-  },
-  {
-    nome: "Il romanzo dell'anno",
-    categoria: "Libri",
-    prezzo: 14.90,
-    rating: 4,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Libro",
-    disponibile: true
-  },
-  {
-    nome: "Zaino da viaggio 30L impermeabile",
-    categoria: "Abbigliamento",
-    prezzo: 49.99,
-    rating: 4,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Zaino",
-    disponibile: true
-  },
-  {
-    nome: "Lampada LED da scrivania orientabile",
-    categoria: "Casa",
-    prezzo: 29.50,
-    rating: 4,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Lampada",
-    disponibile: true
-  },
-  {
-    nome: "Smartwatch fitness con GPS",
-    categoria: "Elettronica",
-    prezzo: 119.00,
-    rating: 4,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Smartwatch",
-    disponibile: true
-  },
-  {
-    nome: "Mouse ergonomico wireless",
-    categoria: "Elettronica",
-    prezzo: 24.90,
-    rating: 4,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Mouse",
-    disponibile: true
-  },
-  {
-    nome: "Caffettiera moka 6 tazze",
-    categoria: "Casa",
-    prezzo: 22.00,
-    rating: 5,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Caffettiera",
-    disponibile: true
-  },
-  {
-    nome: "Felpa con cappuccio",
-    categoria: "Abbigliamento",
-    prezzo: 34.90,
-    rating: 3,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Felpa",
-    disponibile: true
-  },
-  {
-    nome: "Giacca impermeabile",
-    categoria: "Abbigliamento",
-    prezzo: 79.00,
-    rating: 4,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Giacca",
-    disponibile: false
-  },
-  {
-    nome: "Manuale di JavaScript",
-    categoria: "Libri",
-    prezzo: 32.00,
-    rating: 5,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Manuale",
-    disponibile: false
-  },
-  {
-    nome: "Cuscino memory foam",
-    categoria: "Casa",
-    prezzo: 19.90,
-    rating: 2,
-    immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Cuscino",
-    disponibile: true
-  }
+   {
+      nome: "Tablet 10 pollici 64GB",
+      categoria: "Elettronica",
+      prezzo: 199.00,
+      rating: 5,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Tablet",
+      disponibile: true
+   },
+   {
+      nome: "Il romanzo dell'anno",
+      categoria: "Libri",
+      prezzo: 14.90,
+      rating: 4,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Libro",
+      disponibile: true
+   },
+   {
+      nome: "Zaino da viaggio 30L impermeabile",
+      categoria: "Abbigliamento",
+      prezzo: 49.99,
+      rating: 4,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Zaino",
+      disponibile: true
+   },
+   {
+      nome: "Lampada LED da scrivania orientabile",
+      categoria: "Casa",
+      prezzo: 29.50,
+      rating: 4,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Lampada",
+      disponibile: true
+   },
+   {
+      nome: "Smartwatch fitness con GPS",
+      categoria: "Elettronica",
+      prezzo: 119.00,
+      rating: 4,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Smartwatch",
+      disponibile: true
+   },
+   {
+      nome: "Mouse ergonomico wireless",
+      categoria: "Elettronica",
+      prezzo: 24.90,
+      rating: 4,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Mouse",
+      disponibile: true
+   },
+   {
+      nome: "Caffettiera moka 6 tazze",
+      categoria: "Casa",
+      prezzo: 22.00,
+      rating: 5,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Caffettiera",
+      disponibile: true
+   },
+   {
+      nome: "Felpa con cappuccio",
+      categoria: "Abbigliamento",
+      prezzo: 34.90,
+      rating: 3,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Felpa",
+      disponibile: true
+   },
+   {
+      nome: "Giacca impermeabile",
+      categoria: "Abbigliamento",
+      prezzo: 79.00,
+      rating: 4,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Giacca",
+      disponibile: false
+   },
+   {
+      nome: "Manuale di JavaScript",
+      categoria: "Libri",
+      prezzo: 32.00,
+      rating: 5,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Manuale",
+      disponibile: false
+   },
+   {
+      nome: "Cuscino memory foam",
+      categoria: "Casa",
+      prezzo: 19.90,
+      rating: 2,
+      immagine: "https://placehold.co/300x300/EEEEEE/333333?text=Cuscino",
+      disponibile: true
+   }
 ];
 
 
@@ -123,7 +123,7 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function formattaPrezzo(prezzo) {
-  return `€ ${prezzo.toFixed(2).replace(".", ",")}`;
+   return `€ ${prezzo.toFixed(2).replace(".", ",")}`;
 }
 console.log(`Monitor: ${formattaPrezzo(150)}`);
 
@@ -135,11 +135,11 @@ console.log(`Monitor: ${formattaPrezzo(150)}`);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function stelline(rating) {
-  let risultato = "";
-  for (let i = 1; i <= 5; i++) {
-    risultato += i <= rating ? "★" : "☆";
-  }
-  return risultato;
+   let risultato = "";
+   for (let i = 1; i <= 5; i++) {
+      risultato += i <= rating ? "★" : "☆";
+   }
+   return risultato;
 }
 console.log(`Monitor: rating 3 → "${stelline(3)}"`);
 
@@ -164,6 +164,16 @@ console.table(filtraPerCategoria('Libri'));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function filtraDisponibili() {
+   const risultato = [];
+   for (const p of prodotti) {
+      if (p.disponibile && p.rating >= 3) {
+         risultato.push(p);
+      }
+   }
+   return risultato;
+}
+console.log.table(filtraDisponibili());
 
 /* --------------------------------------------------------------
 

@@ -103,3 +103,143 @@ header>a {
 .hero p {
   font-size: 1.1rem;
 }
+
+.card {
+  float: left;
+  width: 23.5%;
+  margin-right: 2%;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  margin-top: -4px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.card:nth-child(4n+1) {
+  clear: left;
+}
+
+.griglia::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.categorie .card {
+  overflow: hidden;
+}
+
+.categorie .card h3 {
+  font-size: 1rem;
+  padding: 12px 14px 0;
+}
+
+.categorie .card a {
+  display: block;
+  padding: 4px 14px 14px;
+  color: #007185;
+  font-size: 0.85rem;
+}
+
+.prodotti .card {
+  padding: 16px;
+}
+
+.prodotti .card h3 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin: 12px 0 4px;
+  min-height: 3em;
+}
+
+.voto {
+  font-size: 0.8rem;
+  color: #007185;
+}
+
+.stelle {
+  color: #FF9900;
+}
+
+.voto span:last-child {
+  margin-left: 4px;
+}
+
+.prezzo {
+  color: #b12704;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 4px 0 12px;
+}
+
+.prodotti button {
+  width: 100%;
+  padding: 8px;
+  background-color: #ffd814;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.prodotti button:hover {
+  background-color: #f7ca00;
+}
+
+button:disabled {
+  opacity: 0.5;
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.categorie .card a:hover {
+  text-decoration: underline;
+  color: #c45500;
+}
+
+footer {
+  background-color: #232F3E;
+  color: white;
+  padding: 40px 24px;
+}
+
+footer::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.colonna {
+  float: left;
+  width: 33.33%;
+}
+
+.colonna h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.colonna ul {
+  list-style: none;
+}
+
+.colonna li {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.colonna a:hover {
+  text-decoration: underline;
+}
+

@@ -173,7 +173,7 @@ function filtraDisponibili() {
    }
    return risultato;
 }
-console.log.table(filtraDisponibili());
+console.table(filtraDisponibili());
 
 /* --------------------------------------------------------------
 

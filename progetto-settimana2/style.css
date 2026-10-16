@@ -9,7 +9,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   color: #111;
-  background: #fff;
+  background: #F5F5F5;
 }
 
 img {
@@ -29,4 +29,77 @@ button {
   background: none;
 }
 
-/* Scrivi qui sotto i tuoi stili */
+.categorie,
+.prodotti {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+header {
+  background-color: #131921;
+  padding: 12px 24px;
+}
+
+.logo {
+  color: #FF9900;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-right: 24px;
+}
+
+header form {
+  display: inline-block;
+  width: 55%;
+  margin-right: 24px;
+}
+
+header input {
+  width: 85%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-family: inherit;
+}
+
+header form button {
+  width: 15%;
+  padding: 8px;
+  background-color: #FEBD69;
+  font-weight: bold;
+  border-radius: 0 4px 4px 0;
+}
+
+header>a {
+  color: white;
+  font-size: 0.9rem;
+  margin-right: 16px;
+}
+
+.carrello {
+  background-color: #232F3E;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+.hero {
+  background-color: #303f51;
+  color: white;
+  text-align: center;
+  padding: 64px 24px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+}

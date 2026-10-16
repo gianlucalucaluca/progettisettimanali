@@ -183,7 +183,23 @@ console.table(filtraDisponibili());
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function renderProdotti(lista) {
+   const container = document.querySelector('#prodotti')
+   let html = ''
+   for (const p of lista) {
+      html += `
+     <article class="card">
+        <img src="${p.immagine}" alt="${p.nome}">
+        <h3>${p.nome}</h3>
+        <p class="voto"><span class="stelle">${stelline(p.rating)}</span></p>
+        <p class="prezzo">${formattaPrezzo(p.prezzo)}</p>
+        ${p.disponibile ? '<button type="button">Aggiungi al carrello</button>' : '<button type="button" disabled>Esaurito</button>'}
+      </article>`;
+   }
+   container.innerHTML = html;
+}
 
+renderProdotti(prodotti);
 
 /* VERSIONE AVANZATA — Aggiungi al carrello
    Quando si clicca il bottone "Aggiungi al carrello", incrementa il contatore

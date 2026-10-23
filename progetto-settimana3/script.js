@@ -20,6 +20,7 @@ REGOLE
 let film = [
   {
     id: 1,
+    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=Blade+Runner",
     titolo: "Blade Runner",
     regista: "Ridley Scott",
     anno: 1982,
@@ -27,6 +28,7 @@ let film = [
   },
   {
     id: 2,
+    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=Apocalypse+Now",
     titolo: "Apocalypse Now",
     regista: "Francis Ford Coppola",
     anno: 1979,
@@ -34,6 +36,7 @@ let film = [
   },
   {
     id: 3,
+    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=Oldboy",
     titolo: "Oldboy",
     regista: "Park Chan-wook",
     anno: 2003,
@@ -41,6 +44,7 @@ let film = [
   },
   {
     id: 4,
+    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=Il+padrino",
     titolo: "Il padrino",
     regista: "Francis Ford Coppola",
     anno: 1972,
@@ -48,6 +52,7 @@ let film = [
   },
   {
     id: 5,
+    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=The+Irishman",
     titolo: "The Irishman",
     regista: "Martin Scorsese",
     anno: 2019,
@@ -78,9 +83,11 @@ function render() {
   listaFilm.innerHTML = "";
 
   film.forEach((unFilm) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<h3>${unFilm.titolo}</h3><p>${unFilm.regista}—${unFilm.anno}</p>`;
-    listaFilm.appendChild(li);
+    const card = document.createElement("article");
+    card.classList.add('card');
+    card.innerHTML = `<img src="${unFilm.locandina}" alt="${unFilm.titolo}">
+    <h3>${unFilm.titolo}</h3><p>${unFilm.regista}—${unFilm.anno}</p>`;
+    listaFilm.appendChild(card);
   });
 }
 

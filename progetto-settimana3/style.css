@@ -35,3 +35,40 @@ button {
 }
 
 /* Scrivi qui sotto i tuoi stili */
+.card {
+  float: left;
+  width: 23.5%;
+  margin-right: 2%;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  margin-top: -4px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.card:nth-child(4n+1) {
+  clear: left;
+}
+
+.griglia::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.lista .card {
+  padding: 16px;
+}

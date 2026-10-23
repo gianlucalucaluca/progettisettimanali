@@ -54,7 +54,13 @@ let film = [
     visto: false,
   },
 ];
-let ricerca = '';
+let ricerca = "";
+
+const listaFilm = document.querySelector("#lista-film");
+const numTotale = document.querySelector("#num-totale");
+const numVisti = document.querySelector("#num-visti");
+const numDaVedere = document.querySelector("#num-da-vedere");
+const barraVisti = document.querySelector("#barra-visti");
 
 /* RENDER()
    Una sola funzione che ridipinge la lista. A ogni chiamata:
@@ -68,6 +74,16 @@ let ricerca = '';
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function render() {
+  listaFilm.innerHTML = "";
+
+  film.forEach((unFilm) => {
+    console.log(unFilm);
+    const li = document.createElement('li');
+    li.textContent = unFilm.titolo;
+    listaFilm.appendChild(li);
+  });
+}
 
 /* FORM CON VALIDAZIONE
    addEventListener("submit") sul form.
@@ -150,3 +166,5 @@ let ricerca = '';
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+render();

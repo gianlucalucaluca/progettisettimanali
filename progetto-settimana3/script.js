@@ -8,7 +8,6 @@ REGOLE
 - Niente AI per generare codice. Niente template scaricati.
 */
 
-
 /* STATO
    In cima al file definisci poche variabili globali:
    - un array di oggetti come dato principale (es. libri, ricette, film, ...)
@@ -18,7 +17,44 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+let film = [
+  {
+    id: 1,
+    titolo: "Blade Runner",
+    regista: "Ridley Scott",
+    anno: 1982,
+    visto: true,
+  },
+  {
+    id: 2,
+    titolo: "Apocalypse Now",
+    regista: "Francis Ford Coppola",
+    anno: 1979,
+    visto: true,
+  },
+  {
+    id: 3,
+    titolo: "Oldboy",
+    regista: "Park Chan-wook",
+    anno: 2003,
+    visto: false,
+  },
+  {
+    id: 4,
+    titolo: "Il padrino",
+    regista: "Francis Ford Coppola",
+    anno: 1972,
+    visto: true,
+  },
+  {
+    id: 5,
+    titolo: "The Irishman",
+    regista: "Martin Scorsese",
+    anno: 2019,
+    visto: false,
+  },
+];
+let ricerca = '';
 
 /* RENDER()
    Una sola funzione che ridipinge la lista. A ogni chiamata:
@@ -33,7 +69,6 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
 /* FORM CON VALIDAZIONE
    addEventListener("submit") sul form.
    event.preventDefault().
@@ -45,7 +80,6 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
 /* INTERAZIONI BASE — eliminare, modificare, contare
    - Elimina: filter per id, render(). Event delegation sul container.
    - Modifica in-place: button "Modifica". Al click il testo diventa <input>,
@@ -54,7 +88,6 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
 
 /* RICERCA, FILTRO, ORDINAMENTO
    - Ricerca live: <input> con event "input". Salva in stato e render().
@@ -65,7 +98,6 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
 /* NOTIFICHE TEMPORANEE
    Funzione notifica(testo) che imposta il testo del <div id="notifica">,
    lo mostra (display: block), poi dopo 3000ms (setTimeout) lo nasconde.
@@ -73,14 +105,12 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
 /* TEMA CHIARO/SCURO
    Un button che chiama document.body.classList.toggle("dark").
    In CSS scrivi le regole opposte (es. body.dark { background: #111; ... }).
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
 
 /* PERSISTENZA — localStorage (cerca tu su MDN)
    - In fondo a render(), salva lo stato:
@@ -92,14 +122,12 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
 /* RIORDINO ↑ ↓
    Due button su ogni elemento. Click su ↑ scambia con il precedente nell'array,
    ↓ con il successivo. Event delegation. Poi render().
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
 
 /* STATISTICHE GRAFICHE
    Almeno due indicatori: contatori grandi e/o barre orizzontali
@@ -108,14 +136,12 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
 /* MULTI-VISTA — lista / card / tabella
    Una variabile globale "vista" che render() legge per decidere quale HTML
    produrre. Tre button cambiano "vista" e chiamano render().
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
 
 /* CATEGORIE
    Aggiungi un campo categoria nello schema. Nel form un <select> per sceglierla.

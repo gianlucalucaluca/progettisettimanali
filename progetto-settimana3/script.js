@@ -60,6 +60,7 @@ let film = [
   },
 ];
 let ricerca = "";
+let idInModifica = null;
 
 const listaFilm = document.querySelector("#lista-film");
 const numTotale = document.querySelector("#num-totale");
@@ -94,8 +95,27 @@ function render() {
     card.classList.add("card");
     const classe = unFilm.visto ? "visto" : "da-vedere";
     card.classList.add(classe);
-    card.innerHTML = `<img src="${unFilm.locandina}" alt="${unFilm.titolo}">
-    <h3>${unFilm.titolo}</h3><p>${unFilm.regista}—${unFilm.anno}</p><button class='elimina' data-id='${unFilm.id}'>Elimina</button>`;
+    
+    if (unFilm.id === idInModifica) {
+      card.innerHTML = `
+        <img src="${unFilm.locandina}" alt="${unFilm.titolo}">
+        <input type="text" class="campo-modifica mod-titolo" value="${unFilm.titolo}">
+        <input type="text" class="campo-modifica mod-regista" value="${unFilm.regista}">
+        <input type="number" class="campo-modifica mod-anno" value="${unFilm.anno}">
+        <input type="text" class="campo-modifica mod-locandina" value="${unFilm.locandina}">
+        <select class="campo-modifica mod-visto">
+          <option value="no">Da vedere</option>
+          <option value="si">Visto</option>
+        </select>
+        <p>Premi Invio per salvare</p>`;
+      card.querySelector(".mod-visto").value = unFilm.visto ? "si" : "no";
+    } else {
+      card.innerHTML = `<img src="${unFilm.locandina}" alt="${unFilm.titolo}">
+        <h3>${unFilm.titolo}</h3><p>${unFilm.regista}—${unFilm.anno}</p>
+        <button class="modifica" data-id="${unFilm.id}">Modifica</button>
+        <button class="elimina" data-id="${unFilm.id}">Elimina</button>`;
+    }
+
     listaFilm.appendChild(card);
   });
 }
@@ -146,6 +166,13 @@ formFilm.addEventListener("submit", (event) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+listaFilm.addEventListener("click", (event) => {
+  if (event.target.classList.contains("elimina")) {
+    const id = Number(event.target.dataset.id);
+    film = film.filter((f) => f.id !== id);
+    render();
+  }
+});
 
 /* RICERCA, FILTRO, ORDINAMENTO
    - Ricerca live: <input> con event "input". Salva in stato e render().

@@ -95,7 +95,7 @@ function render() {
     const classe = unFilm.visto ? "visto" : "da-vedere";
     card.classList.add(classe);
     card.innerHTML = `<img src="${unFilm.locandina}" alt="${unFilm.titolo}">
-    <h3>${unFilm.titolo}</h3><p>${unFilm.regista}—${unFilm.anno}</p>`;
+    <h3>${unFilm.titolo}</h3><p>${unFilm.regista}—${unFilm.anno}</p><button class='elimina' data-id='${unFilm.id}'>Elimina</button>`;
     listaFilm.appendChild(card);
   });
 }
@@ -129,7 +129,7 @@ formFilm.addEventListener("submit", (event) => {
     regista: regista,
     anno: Number(anno),
     visto: visto === 'si',
-    locandina: locandina,
+    locandina: locandina !== '' ? locandina : `https://placehold.co/300x450/EEEEEE/333333?text=${titolo}`
   };
   film.push(nuovoFilm);
   formFilm.reset();

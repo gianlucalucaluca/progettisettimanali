@@ -95,7 +95,7 @@ function render() {
     card.classList.add("card");
     const classe = unFilm.visto ? "visto" : "da-vedere";
     card.classList.add(classe);
-    
+
     if (unFilm.id === idInModifica) {
       card.innerHTML = `
         <img src="${unFilm.locandina}" alt="${unFilm.titolo}">
@@ -170,6 +170,27 @@ listaFilm.addEventListener("click", (event) => {
   if (event.target.classList.contains("elimina")) {
     const id = Number(event.target.dataset.id);
     film = film.filter((f) => f.id !== id);
+    render();
+  }
+
+  if (event.target.classList.contains("modifica")) {
+    idInModifica = Number(event.target.dataset.id);
+    render();
+  }
+});
+
+listaFilm.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && event.target.classList.contains("campo-modifica")) {
+    const card = event.target.parentNode;
+    const filmDaCambiare = film.find((f) => f.id === idInModifica);
+
+    filmDaCambiare.titolo = card.querySelector(".mod-titolo").value.trim();
+    filmDaCambiare.regista = card.querySelector(".mod-regista").value.trim();
+    filmDaCambiare.anno = Number(card.querySelector(".mod-anno").value);
+    filmDaCambiare.locandina = card.querySelector(".mod-locandina").value.trim();
+    filmDaCambiare.visto = card.querySelector(".mod-visto").value === "si";
+
+    idInModifica = null;
     render();
   }
 });

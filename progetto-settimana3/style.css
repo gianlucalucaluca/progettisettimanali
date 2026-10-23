@@ -35,12 +35,151 @@ button {
 }
 
 /* Scrivi qui sotto i tuoi stili */
+
+/* colori pagina */
+body {
+  color: #3a3733;
+  background-color: #e6e2da;
+}
+
+/* header */
+header {
+  background-color: #2b2926;
+  color: #ece8e1;
+  padding: 28px 40px;
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 6px;
+}
+
+header p {
+  color: #a8a298;
+  margin-bottom: 14px;
+}
+
+#btn-tema {
+  color: #ece8e1;
+  border: 1px solid #a8a298;
+  border-radius: 6px;
+  padding: 6px 14px;
+}
+
+#btn-tema:hover {
+  background-color: #ece8e1;
+  color: #2b2926;
+}
+
+/* contenitore */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px;
+}
+
+/* riquadri */
+.form,
+.controlli,
+.statistiche {
+  background-color: #f2efe9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form h2 {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+/* campi */
+input,
+select {
+  padding: 8px 10px;
+  border: 1px solid #cfc9be;
+  border-radius: 6px;
+  background-color: #faf8f4;
+  color: #3a3733;
+  font-family: inherit;
+  margin: 0 6px 8px 0;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #a88a5c;
+}
+
+#ricerca {
+  width: 100%;
+  margin: 0;
+}
+
+#form-film button {
+  background-color: #a88a5c;
+  color: #faf8f4;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+#form-film button:hover {
+  background-color: #8c7149;
+}
+
+#errore {
+  color: #a2564a;
+  font-size: 0.9rem;
+}
+
+/* statistiche */
+.contatore {
+  display: inline-block;
+  margin-right: 32px;
+  margin-bottom: 12px;
+}
+
+.contatore span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #a88a5c;
+}
+
+.contatore p {
+  font-size: 0.85rem;
+  color: #7a746a;
+}
+
+/* barra: sfondo */
+.barra {
+  background-color: #dcd6cb;
+  height: 10px;
+  border-radius: 5px;
+}
+
+/* barra: riempimento (larghezza da JS) */
+#barra-visti {
+  background-color: #7f9479;
+  height: 10px;
+  width: 0%;
+  border-radius: 5px;
+}
+
+/* etichetta barra */
+.statistiche>p {
+  font-size: 0.8rem;
+  color: #7a746a;
+  margin-top: 4px;
+}
+
+/* card (da Amazon) */
 .card {
   float: left;
   width: 23.5%;
   margin-right: 2%;
   margin-bottom: 20px;
-  background-color: white;
+  background-color: #f2efe9;
+  border: 3px solid transparent;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
@@ -48,13 +187,15 @@ button {
 .card:hover {
   margin-top: -4px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
 .card img {
   width: 100%;
+  border-radius: 4px;
 }
 
+/* 4 card per riga */
 .card:nth-child(4n) {
   margin-right: 0;
 }
@@ -63,6 +204,7 @@ button {
   clear: left;
 }
 
+/* chiude i float */
 .griglia::after {
   content: "";
   display: block;
@@ -70,5 +212,90 @@ button {
 }
 
 .lista .card {
-  padding: 16px;
+  padding: 10px;
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: #7a746a;
+}
+
+.card button {
+  background-color: #e3ded5;
+  color: #3a3733;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 8px 4px 0 0;
+  font-size: 0.8rem;
+}
+
+.card button:hover {
+  background-color: #cfc9be;
+}
+
+/* campi in modifica */
+.card input,
+.card select {
+  width: 100%;
+  margin: 6px 0 0 0;
+}
+
+/* bordo: visto */
+.card.visto:hover {
+  border-color: #7f9479;
+}
+
+/* bordo: da vedere */
+.card.da-vedere:hover {
+  border-color: #a88a5c;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  color: #7a746a;
+  font-size: 0.85rem;
+  padding: 30px;
+}
+
+/* tema scuro */
+body.dark {
+  background-color: #1d1c1a;
+  color: #d9d4cb;
+}
+
+body.dark header {
+  background-color: #131210;
+}
+
+body.dark .form,
+body.dark .controlli,
+body.dark .statistiche,
+body.dark .card {
+  background-color: #282623;
+}
+
+body.dark input,
+body.dark select {
+  background-color: #1d1c1a;
+  border-color: #46423c;
+  color: #d9d4cb;
+}
+
+body.dark .card button {
+  background-color: #3a3733;
+  color: #d9d4cb;
+}
+
+body.dark .card button:hover {
+  background-color: #4a4640;
+}
+
+body.dark .barra {
+  background-color: #3a3733;
 }

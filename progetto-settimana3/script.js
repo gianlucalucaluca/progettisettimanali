@@ -123,7 +123,20 @@ formFilm.addEventListener("submit", (event) => {
     erroreForm.textContent = "Compila titolo, regista e anno";
     return;
   }
+  const nuovoFilm = {
+    id: Date.now(),
+    titolo: titolo,
+    regista: regista,
+    anno: Number(anno),
+    visto: visto === 'si',
+    locandina: locandina,
+  };
+  film.push(nuovoFilm);
+  formFilm.reset();
+  erroreForm.textContent = '';
+  render();
 });
+
 
 /* INTERAZIONI BASE — eliminare, modificare, contare
    - Elimina: filter per id, render(). Event delegation sul container.

@@ -74,6 +74,9 @@ const inputAnno = document.querySelector("#anno");
 const inputLocandina = document.querySelector("#locandina");
 const selectVisto = document.querySelector("#visto");
 const erroreForm = document.querySelector("#errore");
+const inputRicerca = document.querySelector("#ricerca");
+const btnTema = document.querySelector("#btn-tema");
+
 
 /* RENDER()
    Una sola funzione che ridipinge la lista. A ogni chiamata:
@@ -90,7 +93,12 @@ const erroreForm = document.querySelector("#errore");
 function render() {
   listaFilm.innerHTML = "";
 
-  film.forEach((unFilm) => {
+  const filmVisibili = film.filter((f) =>
+    f.titolo.toLowerCase().includes(ricerca) ||
+    f.regista.toLowerCase().includes(ricerca)
+  );
+
+  filmVisibili.forEach((unFilm) => {
     const card = document.createElement("article");
     card.classList.add("card");
     const classe = unFilm.visto ? "visto" : "da-vedere";
@@ -107,7 +115,7 @@ function render() {
           <option value="no">Da vedere</option>
           <option value="si">Visto</option>
         </select>
-        <p>Premi Invio per salvare</p>`;
+                <button class="salva">Salva</button>`;
       card.querySelector(".mod-visto").value = unFilm.visto ? "si" : "no";
     } else {
       card.innerHTML = `<img src="${unFilm.locandina}" alt="${unFilm.titolo}">
@@ -115,9 +123,19 @@ function render() {
         <button class="modifica" data-id="${unFilm.id}">Modifica</button>
         <button class="elimina" data-id="${unFilm.id}">Elimina</button>`;
     }
-
     listaFilm.appendChild(card);
   });
+
+  const totale = film.length;
+  const visti = film.filter((f) => f.visto).length;
+  const daVedere = totale - visti;
+
+  numTotale.textContent = totale;
+  numVisti.textContent = visti;
+  numDaVedere.textContent = daVedere;
+
+  const percentuale = totale === 0 ? 0 : Math.round((visti / totale) * 100);
+  barraVisti.style.width = `${percentuale}%`;
 }
 
 /* FORM CON VALIDAZIONE
@@ -166,7 +184,20 @@ formFilm.addEventListener("submit", (event) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-listaFilm.addEventListener("click", (event) => {
+function salvaModifica(card) {
+  const filmDaCambiare = film.find((f) => f.id === idInModifica);
+
+  filmDaCambiare.titolo = card.querySelector(".mod-titolo").value.trim();
+  filmDaCambiare.regista = card.querySelector(".mod-regista").value.trim();
+  filmDaCambiare.anno = Number(card.querySelector(".mod-anno").value);
+  filmDaCambiare.locandina = card.querySelector(".mod-locandina").value.trim();
+  filmDaCambiare.visto = card.querySelector(".mod-visto").value === "si";
+
+  idInModifica = null;
+  render();
+}
+
+  listaFilm.addEventListener("click", (event) => {
   if (event.target.classList.contains("elimina")) {
     const id = Number(event.target.dataset.id);
     film = film.filter((f) => f.id !== id);
@@ -177,21 +208,15 @@ listaFilm.addEventListener("click", (event) => {
     idInModifica = Number(event.target.dataset.id);
     render();
   }
+
+  if (event.target.classList.contains("salva")) {
+    salvaModifica(event.target.parentNode);
+  }
 });
 
 listaFilm.addEventListener("keydown", (event) => {
   if (event.key === "Enter" && event.target.classList.contains("campo-modifica")) {
-    const card = event.target.parentNode;
-    const filmDaCambiare = film.find((f) => f.id === idInModifica);
-
-    filmDaCambiare.titolo = card.querySelector(".mod-titolo").value.trim();
-    filmDaCambiare.regista = card.querySelector(".mod-regista").value.trim();
-    filmDaCambiare.anno = Number(card.querySelector(".mod-anno").value);
-    filmDaCambiare.locandina = card.querySelector(".mod-locandina").value.trim();
-    filmDaCambiare.visto = card.querySelector(".mod-visto").value === "si";
-
-    idInModifica = null;
-    render();
+    salvaModifica(event.target.parentNode);
   }
 });
 
@@ -203,6 +228,10 @@ listaFilm.addEventListener("keydown", (event) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+inputRicerca.addEventListener("input", (event) => {
+  ricerca = event.target.value.trim().toLowerCase();
+  render();
+});
 
 /* NOTIFICHE TEMPORANEE
    Funzione notifica(testo) che imposta il testo del <div id="notifica">,
@@ -217,6 +246,10 @@ listaFilm.addEventListener("keydown", (event) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+btnTema.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  btnTema.textContent = document.body.classList.contains("dark") ? "Tema chiaro" : "Tema scuro";
+});
 
 /* PERSISTENZA — localStorage (cerca tu su MDN)
    - In fondo a render(), salva lo stato:

@@ -85,6 +85,8 @@ function render() {
   film.forEach((unFilm) => {
     const card = document.createElement("article");
     card.classList.add('card');
+    const classe = unFilm.visto ? 'visto' : 'da-vedere';
+    card.classList.add(classe);
     card.innerHTML = `<img src="${unFilm.locandina}" alt="${unFilm.titolo}">
     <h3>${unFilm.titolo}</h3><p>${unFilm.regista}—${unFilm.anno}</p>`;
     listaFilm.appendChild(card);

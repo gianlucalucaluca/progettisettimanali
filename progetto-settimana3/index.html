@@ -1,43 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week Project — Settimana III</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pellicula</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>PELLICULA</h1>
+      <p>Cosa hai visto e cosa vedrai, il tuo archivio di film personale.</p>
+      <button id="btn-tema">Tema scuro</button>
+    </header>
 
-  <header>
-    <!-- Titolo dell'app + sottotitolo + button tema chiaro/scuro -->
-  </header>
+    <main>
+      <section class="form">
+        <h2>Aggiungi un film</h2>
+        <form id="form-film">
+          <input type="text" id="titolo" placeholder="Titolo" />
+          <input type="text" id="regista" placeholder="Regista" />
+          <input type="number" id="anno" placeholder="Anno" />
+          <select id="visto">
+            <option value="no">Da vedere</option>
+            <option value="si">Visto</option>
+          </select>
+          <button type="submit">Aggiungi</button>
+        </form>
+        <p id="errore"></p>
+      </section>
 
-  <main>
+      <section class="controlli">
+        <input
+          type="search"
+          id="ricerca"
+          placeholder="Cerca per titolo o regista"
+        />
+      </section>
 
-    <section class="form">
-      <!-- Form di inserimento di nuovi elementi -->
-    </section>
+      <section class="statistiche">
+        <div class="contatore">
+          <span id="num-totale">0</span>
+          <p>Totale</p>
+        </div>
 
-    <section class="controlli">
-      <!-- Ricerca live, filtro (select), ordinamento -->
-    </section>
+        <div class="contatore">
+          <span id="num-visti">0</span>
+          <p>Visti</p>
+        </div>
 
-    <section class="statistiche">
-      <!-- Conteggi e/o barre orizzontali -->
-    </section>
+        <div class="contatore">
+          <span id="num-da-vedere">0</span>
+          <p>Da vedere</p>
+        </div>
 
-    <section class="lista">
-      <!-- Container che render() ricostruisce a ogni cambio di stato -->
-    </section>
+        <div class="barra">
+          <div id="barra-visti"></div>
+        </div>
 
-    <div id="notifica"></div>
+        <p>Percentuale Visti</p>
+      </section>
 
-  </main>
+      <section class="lista">
+        <ul id="lista-film"></ul>
+      </section>
 
-  <footer>
-    <!-- Autore, anno -->
-  </footer>
+      <div id="notifica"></div>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <footer>
+      <p>Pellicula, Gianluca Fatigati, 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

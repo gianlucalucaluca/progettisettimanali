@@ -78,9 +78,8 @@ function render() {
   listaFilm.innerHTML = "";
 
   film.forEach((unFilm) => {
-    console.log(unFilm);
-    const li = document.createElement('li');
-    li.textContent = unFilm.titolo;
+    const li = document.createElement("li");
+    li.innerHTML = `<h3>${unFilm.titolo}</h3><p>${unFilm.regista}—${unFilm.anno}</p>`;
     listaFilm.appendChild(li);
   });
 }

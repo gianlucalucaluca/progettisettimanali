@@ -66,6 +66,13 @@ const numTotale = document.querySelector("#num-totale");
 const numVisti = document.querySelector("#num-visti");
 const numDaVedere = document.querySelector("#num-da-vedere");
 const barraVisti = document.querySelector("#barra-visti");
+const formFilm = document.querySelector("#form-film");
+const inputTitolo = document.querySelector("#titolo");
+const inputRegista = document.querySelector("#regista");
+const inputAnno = document.querySelector("#anno");
+const inputLocandina = document.querySelector("#locandina");
+const selectVisto = document.querySelector("#visto");
+const erroreForm = document.querySelector("#errore");
 
 /* RENDER()
    Una sola funzione che ridipinge la lista. A ogni chiamata:
@@ -84,8 +91,8 @@ function render() {
 
   film.forEach((unFilm) => {
     const card = document.createElement("article");
-    card.classList.add('card');
-    const classe = unFilm.visto ? 'visto' : 'da-vedere';
+    card.classList.add("card");
+    const classe = unFilm.visto ? "visto" : "da-vedere";
     card.classList.add(classe);
     card.innerHTML = `<img src="${unFilm.locandina}" alt="${unFilm.titolo}">
     <h3>${unFilm.titolo}</h3><p>${unFilm.regista}—${unFilm.anno}</p>`;
@@ -103,6 +110,20 @@ function render() {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+formFilm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const titolo = inputTitolo.value.trim();
+  const regista = inputRegista.value.trim();
+  const anno = inputAnno.value.trim();
+  const locandina = inputLocandina.value.trim();
+  const visto = selectVisto.value.trim();
+
+  if (titolo === "" || regista === "" || anno === "") {
+    erroreForm.textContent = "Compila titolo, regista e anno";
+    return;
+  }
+});
 
 /* INTERAZIONI BASE — eliminare, modificare, contare
    - Elimina: filter per id, render(). Event delegation sul container.

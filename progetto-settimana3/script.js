@@ -20,7 +20,7 @@ REGOLE
 let film = [
   {
     id: 1,
-    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=Blade+Runner",
+    locandina: "img/blade-runner.jpg",
     titolo: "Blade Runner",
     regista: "Ridley Scott",
     anno: 1982,
@@ -28,7 +28,7 @@ let film = [
   },
   {
     id: 2,
-    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=Apocalypse+Now",
+    locandina: "img/apocalypse-now.jpg",
     titolo: "Apocalypse Now",
     regista: "Francis Ford Coppola",
     anno: 1979,
@@ -36,7 +36,7 @@ let film = [
   },
   {
     id: 3,
-    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=Oldboy",
+    locandina: "img/oldboy.jpg",
     titolo: "Oldboy",
     regista: "Park Chan-wook",
     anno: 2003,
@@ -44,7 +44,7 @@ let film = [
   },
   {
     id: 4,
-    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=Il+padrino",
+    locandina: "img/il-padrino.jpg",
     titolo: "Il padrino",
     regista: "Francis Ford Coppola",
     anno: 1972,
@@ -52,10 +52,35 @@ let film = [
   },
   {
     id: 5,
-    locandina: "https://placehold.co/300x450/EEEEEE/333333?text=The+Irishman",
+    locandina: "img/the-irishman.jpg",
     titolo: "The Irishman",
     regista: "Martin Scorsese",
     anno: 2019,
+    visto: false,
+  },
+
+  {
+    id: 6,
+    locandina: "img/snatch.jpg",
+    titolo: "Snatch",
+    regista: "Guy Ritchie",
+    anno: 2000,
+    visto: true,
+  },
+  {
+    id: 7,
+    locandina: "img/barry-lyndon.jpg",
+    titolo: "Barry Lyndon",
+    regista: "Stanley Kubrick",
+    anno: 1975,
+    visto: false,
+  },
+  {
+    id: 8,
+    locandina: "img/interstellar.jpg",
+    titolo: "Interstellar",
+    regista: "Christopher Nolan",
+    anno: 2014,
     visto: false,
   },
 ];
@@ -77,7 +102,6 @@ const erroreForm = document.querySelector("#errore");
 const inputRicerca = document.querySelector("#ricerca");
 const btnTema = document.querySelector("#btn-tema");
 
-
 /* RENDER()
    Una sola funzione che ridipinge la lista. A ogni chiamata:
    1) parte dall'array completo,
@@ -93,9 +117,10 @@ const btnTema = document.querySelector("#btn-tema");
 function render() {
   listaFilm.innerHTML = "";
 
-  const filmVisibili = film.filter((f) =>
-    f.titolo.toLowerCase().includes(ricerca) ||
-    f.regista.toLowerCase().includes(ricerca)
+  const filmVisibili = film.filter(
+    (f) =>
+      f.titolo.toLowerCase().includes(ricerca) ||
+      f.regista.toLowerCase().includes(ricerca),
   );
 
   filmVisibili.forEach((unFilm) => {
@@ -166,15 +191,17 @@ formFilm.addEventListener("submit", (event) => {
     titolo: titolo,
     regista: regista,
     anno: Number(anno),
-    visto: visto === 'si',
-    locandina: locandina !== '' ? locandina : `https://placehold.co/300x450/EEEEEE/333333?text=${titolo}`
+    visto: visto === "si",
+    locandina:
+      locandina !== ""
+        ? locandina
+        : `https://placehold.co/300x450/EEEEEE/333333?text=${titolo}`,
   };
   film.push(nuovoFilm);
   formFilm.reset();
-  erroreForm.textContent = '';
+  erroreForm.textContent = "";
   render();
 });
-
 
 /* INTERAZIONI BASE — eliminare, modificare, contare
    - Elimina: filter per id, render(). Event delegation sul container.
@@ -197,7 +224,7 @@ function salvaModifica(card) {
   render();
 }
 
-  listaFilm.addEventListener("click", (event) => {
+listaFilm.addEventListener("click", (event) => {
   if (event.target.classList.contains("elimina")) {
     const id = Number(event.target.dataset.id);
     film = film.filter((f) => f.id !== id);
@@ -215,7 +242,10 @@ function salvaModifica(card) {
 });
 
 listaFilm.addEventListener("keydown", (event) => {
-  if (event.key === "Enter" && event.target.classList.contains("campo-modifica")) {
+  if (
+    event.key === "Enter" &&
+    event.target.classList.contains("campo-modifica")
+  ) {
     salvaModifica(event.target.parentNode);
   }
 });
@@ -248,7 +278,9 @@ inputRicerca.addEventListener("input", (event) => {
 /* SCRIVI QUI LA TUA RISPOSTA */
 btnTema.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  btnTema.textContent = document.body.classList.contains("dark") ? "Tema chiaro" : "Tema scuro";
+  btnTema.textContent = document.body.classList.contains("dark")
+    ? "Tema chiaro"
+    : "Tema scuro";
 });
 
 /* PERSISTENZA — localStorage (cerca tu su MDN)

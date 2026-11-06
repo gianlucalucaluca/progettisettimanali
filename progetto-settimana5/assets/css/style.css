@@ -1,9 +1,10 @@
 /* Bloom — Week Project Settimana V
    Reset minimale + tipografia di base. Da qui costruisci il layout. */
 
-
 /* Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -120,9 +121,97 @@ nav a:hover {
   }
 }
 
+/* SEZIONI*/
+section {
+  padding: 60px 24px;
+}
+
+section h2 {
+  text-align: center;
+  color: hsl(150, 60%, 30%);
+  font-size: 28px;
+  margin: 0 0 32px;
+}
+
+/* CARD 1*/
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 32px 24px;
+  text-align: center;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card i {
+  font-size: 32px;
+  color: hsl(150, 60%, 30%);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 12px 0 8px;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* FOOTER */
+#site-footer {
+  background-color: black;
+  color: white;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+#site-footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.social a:hover {
+  background-color: hsl(150, 60%, 30%);
+}
+
 /* >=768 */
 @media (min-width: 768px) {
-
   #site-header {
     flex-direction: row;
     justify-content: space-between;
@@ -130,5 +219,20 @@ nav a:hover {
 
   .hero h1 {
     font-size: 48px;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 280px;
+  }
+
+  #site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
 }

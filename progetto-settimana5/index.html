@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <header id="site-header">
@@ -33,15 +33,54 @@
         <button id="cta-btn">Richiedi preventivo</button>
       </section>
 
-      <section class="services">
-        <!-- 3 card servizi: icona + titolo + descrizione -->
+      <section class="services" id="servizi">
+        <h2>I nostri servizi</h2>
+        <div class="cards">
+          <div class="card">
+            <i class="fa-solid fa-pen-nib"></i>
+            <h3>Identità visiva</h3>
+            <p>
+              Logo, palette, tipografia e linee guida per un brand coerente,
+              riconoscibile e duraturo.
+            </p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-desktop"></i>
+            <h3>Web design</h3>
+            <p>
+              Siti vetrina e landing page responsive, accessibili e ottimizzate
+              per dispositivi mobili.
+            </p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-film"></i>
+            <h3>Motion graphic</h3>
+            <p>
+              Animazioni e brevi video per raccontare il prodotto, i social e le
+              campagne pubblicitarie.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer id="site-footer">
-      <!-- Logo, social icons, copyright -->
+      <div class="footer-brand">
+        <a href="#" class="logo"><i class="fa-solid fa-seedling"></i> Bloom</a>
+        <p>Studio di design fondato nel 2026.</p>
+      </div>
+
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-behance"></i></a>
+      </div>
+
+      <p>© 2026 Bloom</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

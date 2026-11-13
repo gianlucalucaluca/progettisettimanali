@@ -1,0 +1,71 @@
+.bg-primary {
+  background-color: hsl(20, 30%, 35%) !important;
+}
+
+.text-primary {
+  color: hsl(20, 30%, 35%) !important;
+}
+
+.btn-primary {
+  background-color: hsl(20, 30%, 35%);
+  border-color: hsl(20, 30%, 35%);
+}
+
+.btn-primary:hover {
+  background-color: hsl(20, 30%, 27%) !important;
+  border-color: hsl(20, 30%, 27%) !important;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: hsl(20, 20%, 15%);
+}
+
+#studio {
+  min-height: 80vh;
+}
+
+#servizi .card,
+#lavori .card {
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+#servizi .card:hover,
+#lavori .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+#lavori .card {
+  cursor: pointer;
+}
+
+#lavori .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+#servizi .icona {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+#site-footer {
+  background-color: hsl(20, 20%, 15%);
+}
+
+#site-footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#site-footer a:hover {
+  color: hsl(40, 30%, 90%);
+}

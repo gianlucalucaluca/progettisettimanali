@@ -27,6 +27,16 @@
     </header>
 
     <main class="container">
+      <section id="preferiti-section" class="mb-5">
+        <h2 class="h4 fw-bold mb-3">⭐ Le tue squadre preferite</h2>
+
+        <p id="messaggio-preferiti" class="fst-italic text-secondary">
+          Non hai ancora salvato nessuna squadra. Cercane una qui sopra e
+          aggiungila ai preferiti.
+        </p>
+
+        <div id="lista-preferiti" class="row g-3"></div>
+      </section>
       <section id="risultati-section">
         <h2 class="h4 fw-bold mb-3">Squadre trovate</h2>
 
@@ -43,8 +53,24 @@
         <div id="lista-squadre" class="row g-3"></div>
       </section>
 
-      <section id="dettagli-section" hidden>
-        <!-- Visibile dopo click su una squadra: prossimi eventi + ultimi risultati -->
+      <section
+        id="dettagli-section"
+        class="bg-white rounded shadow-sm p-4 mt-4"
+        hidden
+      >
+        <h2 id="nome-squadra" class="h3 fw-bold mb-4"></h2>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <h3 class="h5 fw-bold titolo-eventi">Prossimi eventi</h3>
+            <ul id="lista-prossimi" class="list-unstyled"></ul>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <h3 class="h5 fw-bold titolo-eventi">Ultimi risultati</h3>
+            <ul id="lista-ultimi" class="list-unstyled"></ul>
+          </div>
+        </div>
       </section>
     </main>
 
